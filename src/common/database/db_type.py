@@ -6,3 +6,4 @@ class DbType(Enum):
     POSTGRESQL = 2
     SYBASE = 3
     ORACLE = 4
+    MSSQL = 5

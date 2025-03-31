@@ -1,3 +1,4 @@
+from src.common.database.db_mssql_service import DbMssqlService
 from src.common.database.db_oracle_service import DbOracleService
 from src.common.database.db_pg_service import DbPgService
 from src.common.database.db_service import DbService
@@ -14,5 +15,7 @@ class DbServiceFactory:
             return DbSybaseService(connection_string)
         elif db_type == DbType.ORACLE:
             return DbOracleService(connection_string)
+        elif db_type == DbType.MSSQL:
+            return DbMssqlService(connection_string)
         else:
             raise ValueError(f"Unsupported database type: {db_type}")
